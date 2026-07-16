@@ -1,16 +1,29 @@
-
+ 
 
 while True:
-    
-    numero_1 = int(input('digite um numero?'))
+    try:
+        numero_1 = int(input('digite um numero?'))
 
-    operacao = input('Digite a operação +, -, *, /')
-
-    numero_2 =  int(input('Qual segundo Numero?'))
+        numero_2 =  int(input('Qual segundo Numero?'))
+    except ValueError:
+        print('Numero inválido')
+        continue
+    operacao = input('Digite a operação(+,-,x,/): ')
 
     if operacao == '+':
         resultado = numero_1 + numero_2
         print(resultado)
 
-
+    elif operacao == '-':
+        resultado = numero_1 - numero_2
+        print(resultado)
+    elif operacao == 'x':
+        resultado = numero_1 * numero_2
+        print(resultado)
+    elif operacao == '/':
+        resultado = numero_1 / numero_2
+        print(resultado)
+    
+    else:
+        print("Digite apenas +, -, *, /")
 
